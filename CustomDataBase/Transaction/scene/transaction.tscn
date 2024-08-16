@@ -1,0 +1,65 @@
+[gd_scene load_steps=3 format=3 uid="uid://beyx7gj3fkpxu"]
+
+[ext_resource type="Script" path="res://Transaction/scene/transaction.gd" id="1_aq4v0"]
+[ext_resource type="PackedScene" uid="uid://b6mca71vyik7s" path="res://Products/Scene/product_data.tscn" id="2_jusd6"]
+
+[node name="Transaction" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_aq4v0")
+
+[node name="Refresh" type="Button" parent="."]
+layout_mode = 2
+offset_left = 1010.0
+offset_top = 128.0
+offset_right = 1151.0
+offset_bottom = 159.0
+text = "Refresh Products"
+
+[node name="Transaction_Product_Countainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+offset_left = 2.0
+offset_top = 165.0
+offset_right = 1151.0
+offset_bottom = 530.0
+
+[node name="Product_Scroll" type="ScrollContainer" parent="Transaction_Product_Countainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Products_Countainer" type="VBoxContainer" parent="Transaction_Product_Countainer/Product_Scroll"]
+layout_mode = 2
+
+[node name="ProductData" parent="Transaction_Product_Countainer/Product_Scroll/Products_Countainer" instance=ExtResource("2_jusd6")]
+layout_mode = 2
+
+[node name="Customer_Countainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 250.0
+offset_bottom = 101.0
+
+[node name="Customer_UUID" type="LineEdit" parent="Customer_Countainer"]
+layout_mode = 2
+placeholder_text = "Customer Uuid"
+
+[node name="Customer_Name" type="LineEdit" parent="Customer_Countainer"]
+layout_mode = 2
+placeholder_text = "Customer Name"
+
+[node name="Customer_Phone_Number" type="LineEdit" parent="Customer_Countainer"]
+layout_mode = 2
+placeholder_text = "Customer Phone Number"
+
+[node name="Transaction_Date" type="LineEdit" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -120.0
+offset_bottom = 31.0
+grow_horizontal = 0
+placeholder_text = "DD/MM/YYYY"

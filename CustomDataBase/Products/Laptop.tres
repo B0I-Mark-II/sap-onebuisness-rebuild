@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ProductData" load_steps=2 format=3 uid="uid://3hnbdj2d6xjy"]
+
+[ext_resource type="Script" path="res://Products/ProductData.gd" id="1_q2k5l"]
+
+[resource]
+script = ExtResource("1_q2k5l")
+Name = "Super Awesome Laptop"
+Catagory = "Laptop"
+uuid = 69420
+barcode = "12354524"
+Cost = 1200.0
+Discountable = false
+stock = 2

@@ -1,0 +1,90 @@
+[gd_scene load_steps=2 format=3 uid="uid://b6mca71vyik7s"]
+
+[ext_resource type="Script" path="res://Products/Scene/product_data.gd" id="1_mhn65"]
+
+[node name="ProductData" type="HBoxContainer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -415.0
+offset_top = -29.0
+offset_right = 415.0
+offset_bottom = 29.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+script = ExtResource("1_mhn65")
+
+[node name="Uuid_Countainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Uuid_Ui" type="Label" parent="Uuid_Countainer"]
+layout_mode = 2
+text = "Product UUID"
+
+[node name="Uuid" type="LineEdit" parent="Uuid_Countainer"]
+layout_mode = 2
+placeholder_text = "CC#"
+
+[node name="Name_Countainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Name_Ui" type="Label" parent="Name_Countainer"]
+layout_mode = 2
+text = "Product Name"
+
+[node name="Name" type="Label" parent="Name_Countainer"]
+layout_mode = 2
+
+[node name="Barcode_Countainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Barcode_Ui" type="Label" parent="Barcode_Countainer"]
+layout_mode = 2
+text = "Product Barcode"
+
+[node name="Barcode" type="LineEdit" parent="Barcode_Countainer"]
+layout_mode = 2
+placeholder_text = "Barcode"
+
+[node name="Cost_Countainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Cost_Ui" type="Label" parent="Cost_Countainer"]
+layout_mode = 2
+text = "Product Cost"
+
+[node name="Cost" type="LineEdit" parent="Cost_Countainer"]
+layout_mode = 2
+placeholder_text = "Cost"
+editable = false
+
+[node name="Catagory_Countainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Catagory_Ui" type="Label" parent="Catagory_Countainer"]
+layout_mode = 2
+text = "Product Catagory"
+
+[node name="Catagory" type="Label" parent="Catagory_Countainer"]
+layout_mode = 2
+
+[node name="Stock_Countainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Stock_Ui" type="Label" parent="Stock_Countainer"]
+layout_mode = 2
+text = "Product Stock Avalible"
+
+[node name="Stock" type="Label" parent="Stock_Countainer"]
+layout_mode = 2
+
+[node name="Refresh_Timer" type="Timer" parent="."]
+wait_time = 120.0
+autostart = true
+
+[connection signal="text_submitted" from="Uuid_Countainer/Uuid" to="." method="_on_uuid_text_submitted"]
+[connection signal="text_submitted" from="Barcode_Countainer/Barcode" to="." method="_on_barcode_text_submitted"]
+[connection signal="timeout" from="Refresh_Timer" to="." method="_on_refresh_timer_timeout"]

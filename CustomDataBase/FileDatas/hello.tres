@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="FileData" load_steps=2 format=3 uid="uid://cmdel1c33cpsr"]
+
+[ext_resource type="Script" path="res://FileDatas/FileData.gd" id="1_q8d0i"]
+
+[resource]
+script = ExtResource("1_q8d0i")
+Title = "hello"
+Description = "test"
+Content = "hello"

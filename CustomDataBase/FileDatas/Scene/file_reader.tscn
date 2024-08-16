@@ -1,0 +1,77 @@
+[gd_scene load_steps=2 format=3 uid="uid://berhhw4bylu3o"]
+
+[ext_resource type="Script" path="res://FileDatas/Scene/file_reader.gd" id="1_i4smv"]
+
+[node name="FileData" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_i4smv")
+
+[node name="File_Container" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 250.0
+offset_bottom = 500.0
+
+[node name="Name" type="Label" parent="File_Container"]
+layout_mode = 2
+
+[node name="Last Save Time" type="Label" parent="File_Container"]
+layout_mode = 2
+
+[node name="NewFile_Container" type="HBoxContainer" parent="File_Container"]
+layout_mode = 2
+
+[node name="New" type="Button" parent="File_Container/NewFile_Container"]
+layout_mode = 2
+text = "New File"
+
+[node name="FileName" type="LineEdit" parent="File_Container/NewFile_Container"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "File Name Eg. MyFile"
+
+[node name="Load_Container" type="HBoxContainer" parent="File_Container"]
+layout_mode = 2
+
+[node name="Load" type="Button" parent="File_Container/Load_Container"]
+layout_mode = 2
+text = "Load File"
+
+[node name="FileName" type="LineEdit" parent="File_Container/Load_Container"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "File Name Eg. MyFile"
+
+[node name="Edit_Container" type="VBoxContainer" parent="File_Container"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Title" type="LineEdit" parent="File_Container/Edit_Container"]
+layout_mode = 2
+placeholder_text = "File Title"
+
+[node name="Description" type="LineEdit" parent="File_Container/Edit_Container"]
+layout_mode = 2
+placeholder_text = "File Description"
+
+[node name="Content" type="TextEdit" parent="File_Container/Edit_Container"]
+layout_mode = 2
+size_flags_vertical = 3
+placeholder_text = "File Content"
+
+[node name="Save" type="Button" parent="File_Container/Edit_Container"]
+layout_mode = 2
+text = "Save File"
+
+[node name="Export" type="Button" parent="File_Container"]
+layout_mode = 2
+text = "Export Data"
+
+[connection signal="pressed" from="File_Container/NewFile_Container/New" to="." method="_on_new_pressed"]
+[connection signal="pressed" from="File_Container/Load_Container/Load" to="." method="_on_load_pressed"]
+[connection signal="pressed" from="File_Container/Edit_Container/Save" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="File_Container/Export" to="." method="_on_export_pressed"]
